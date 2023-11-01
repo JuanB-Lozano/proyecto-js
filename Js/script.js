@@ -61,12 +61,12 @@ do {
     telefono = prompt('Ingrese su número de Teléfono');
 } while (!telEstilo.test(telefono) || telefono === null);
 
-let direccion;
+let email;
 do {
-    direccion = prompt('Ingrese la Dirección de Entrega');
-} while(direccion == '' || direccion == null);
+    email = prompt('Ingrese su Email');
+} while(email == '' || email == null);
 
-let infoEnvio = 'Hola ' + guest + ', ' + 'su pedido se enviara a ' + direccion + '. ' + 'Nos comunicaremos a la brevedad para coordenar el envio al nro: ' + telefono;
+let infoEnvio = 'Nombre: ' + guest + '\nTelefono: ' + telefono + '\nEmail: ' + email;
 alert(infoEnvio);
 
 
@@ -87,7 +87,7 @@ for (const obj of compra) {
 };
 
 carritoFinal += `\nPrecio Final de su Compra: $${precioFinal}\n\n`;
-carritoFinal += `Información de Entrega:\n${infoEnvio}`;
+carritoFinal += `Información de Entrega \n${infoEnvio}`;
 
 console.log(carritoFinal);
 alert(carritoFinal);
