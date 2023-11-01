@@ -1,0 +1,281 @@
+h1 {
+  display: flex;
+  text-decoration: underline;
+  justify-content: center;
+  padding-top: 3%;
+}
+
+h2 {
+  color: #ff5342;
+  text-decoration: underline;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+.card-op {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.nuevosTitulo {
+  font-family: "system-ui";
+}
+
+.tcg-title {
+  background-image: url("../fotos/mtgCards.jpg");
+  display: flex;
+  justify-content: center;
+}
+.accesorios-title {
+  background-image: url('../fotos/bannerAccesorios.jpg');
+  display: flex;
+  justify-content: center;
+}
+
+.ttrpgTitle {
+  background-image: url('../fotos/bannerTtrpg2.jpg');
+  display: flex;
+  justify-content: center;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.topNav {
+  border-bottom: 2px solid #000;
+  width: 100%;
+  top: 0px;
+  color: #403a79;
+  text-align: center;
+  font-family: "system-ui";
+  background-color: #232d4b;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #232d4b;
+}
+
+.searchBar {
+  display: flex;
+}
+
+.logo {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  padding-right: 30px;
+}
+
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.cartFoto {
+  width: 2rem;
+}
+
+.cart-flex {
+  display: flex;
+}
+
+.footer-bot {
+  display: flex;
+  justify-content: center;
+}
+
+.msj-contacto {
+  height: 200px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-flex {
+  display: flex;
+}
+
+.card-img-store {
+  width: 18rem;
+}
+
+.introItem {
+  font-family: "Open Sans";
+  color: antiquewhite;
+}
+
+.carousel > .carousel-inner > .carousel-item > img > .intro-car-img {
+  width: 240px;
+  height: 300px;
+}
+
+.showroom-media {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.show-flex2 {
+  transform: translateY(10px);
+}
+
+.mtg-lotr-index {
+  width: 18rem;
+}
+
+.container {
+  background-color: #353846;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.divGrid {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+}
+
+.showrooms {
+  display: flex;
+}
+
+.divVacio {
+  padding: 5%;
+  width: 5%;
+}
+
+.divVacio2 {
+  padding: 2%;
+}
+
+@media screen and (max-width: 1024px) {
+  .intro-media {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #262737;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .intro-media {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #262737;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .carousel-item-index {
+    height: 20%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .carousel-item-index {
+    height: 10%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .divGrid {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .divGrid {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+@media screen and (max-width:1024px) {
+  .carousel-section {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .carousel-section {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .cards-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cards-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .index-section {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #262737;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .index-section {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #262737;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .tcg-carousel-item {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .tcg-carousel-item {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
