@@ -2,7 +2,7 @@ const paquetes = [
 	{ id: 1, nombre: 'Booster Packs Magic: The Gathering LoTR', precio: 2000 },
     { id: 2, nombre: 'Booster Packs Magic: The Gathering Kamigawa', precio: 1500 },
 	{ id: 3, nombre: 'Booster Packs One Piece Legends', precio: 1000 },
-    { id: 4, nombre: 'Booster Packs One Piece Romance Dawn', precio: 500},
+    { id: 4, nombre: 'Booster Packs One Piece Romance Dawn', precio: 800},
 ];
 
 console.log("Productos: ", paquetes);
