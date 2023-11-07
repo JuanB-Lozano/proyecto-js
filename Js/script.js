@@ -45,9 +45,9 @@ console.log("Pedido:", compra);
 
 let carrito = 'Su carrito:\n';
 
-for (const obj of compra) {
-    const total = obj.cantidad * obj.paquete.precio;
-    const pedido = `${obj.cantidad} x ${obj.paquete.nombre}: $${total}\n`;
+for (const objeto of compra) {
+    const total = objeto.cantidad * objeto.paquete.precio;
+    const pedido = `${objeto.cantidad} x ${objeto.paquete.nombre}: $${total}\n`;
     console.log(pedido);
     carrito += pedido;
 };
@@ -73,16 +73,16 @@ alert(infoEnvio);
 //Carrito Final
 let precioFinal = 0;
 
-for (const obj of compra) {
-    const total = obj.cantidad * obj.paquete.precio;
+for (const objeto of compra) {
+    const total = objeto.cantidad * objeto.paquete.precio;
     precioFinal += total;
 };
 
 let carritoFinal = 'Resumen del Pedido:\n\n';
 
-for (const obj of compra) {
-    const total = obj.cantidad * obj.paquete.precio;
-    const pedido = `${obj.cantidad} x ${obj.paquete.nombre}: $${total}\n`;
+for (const objeto of compra) {
+    const total = objeto.cantidad * objeto.paquete.precio;
+    const pedido = `${objeto.cantidad} x ${objeto.paquete.nombre}: $${total}\n`;
     carritoFinal += pedido;
 };
 
