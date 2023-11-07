@@ -24,6 +24,12 @@ h3 {
   flex-flow: row wrap;
 }
 
+.card-text {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .nuevosTitulo {
   font-family: "system-ui";
 }
