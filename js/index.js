@@ -3,7 +3,7 @@ const modal = document.getElementById('ventana-modal');
 const carrito = document.getElementById('carrito');
 const totalCarrito = document.getElementById('total');
 const btnClose = document.getElementsByClassName('close')[0];
-const containerCart = document.querySelector('.modal-body');
+const containerCarrito = document.querySelector('.modal-body');
 const iconMenu = document.getElementById('icon-menu');
 const contenedorProductos = document.querySelector('.contenedor-carrito');
 const cantidadProductos = document.querySelector('.count-products');
@@ -33,7 +33,7 @@ function cargarEventos() {
         renderizarProductos();
     });
 
-    containerProducts.addEventListener('click', agregarProducto);
+    containerProducts.addEventListener('click', addProduct);
 
     carrito.onclick = function () {
         modal.style.display = 'block';
@@ -43,25 +43,85 @@ function cargarEventos() {
         ocultarModal();
     };
 
-    window.onclick = function () {
+    window.onclick = function (event) {
         if (event.target == modal) {
             ocultarModal();
         }
     };
 };
 
-function agregarProducto(e) {
+function addProduct(e) {
     e.preventDefault();
-    console.log('Producto Agregado');
+    
 
     if (e.target.classList.contains('agregar-carrito')) {
         const productoAgregado = e.target.parentElement;
-        // console.log(productoAgregado);
+        console.log(productoAgregado);
 
-        alertProducto('success', 'producto agregado', '#34b555');
-        leerDatosProducto(productoAgregado);
+        productoInfo(productoAgregado);
     };
 };
+
+function productoInfo(producto) {
+    console.log(producto);
+
+    const infoProducto = new Producto(
+        producto.querySelector('img').src,
+        producto.querySelector('h4').textContent,
+        Number(producto.querySelector('p').textContent.replace('$', '')),
+        parseInt(producto.querySelector('a').getAttribute('id'))
+    );
+    
+    infoProducto.obtenerTotal();
+    addCarrito(infoProducto);
+
+    // console.log(infoProducto);
+};
+
+function addCarrito(addedProduct) {
+    // console.log(addedProduct);
+    // console.log(productosCarrito);
+
+    const adentroCarrito = productosCarrito.some((producto) => producto.id === addedProduct.id);
+
+    if (adentroCarrito) {
+        const productos = productosCarrito.map((producto) => {
+            if (producto.id === addedProduct) {
+                producto.cantidad++;
+                producto.subtotal = producto.precio * producto.cantidad;
+
+                return producto;
+            } else {
+                return producto;
+            };
+        });
+
+        productosCarrito = productos;
+    } else {
+        productosCarrito.push(addedProduct);
+    }
+
+    console.log(productosCarrito);
+    mostrarProductosCarrito();
+}
+
+function mostrarProductosCarrito() {
+    productosCarrito.forEach((producto) => {
+        const { imagen, nombre, precio, cantidad, subtotal, id } = producto;
+
+        const div = document.createElement('div');
+        div.classList.add('contenedor-producto');
+        div.innerHTML = `
+                         <img src="${imagen}" width="100">
+                         <P>${nombre}</P>
+                         <P>$${precio}</P>
+                         <P>${cantidad}</P>
+                         <P>$${subtotal}</P>
+                         <a href="#" class="eliminar-producto" id="${id}"> X </a>
+                        `
+        containerCarrito.append(div);
+    });
+}
 
 function ocultarModal() {
     modal.style.display = 'none';

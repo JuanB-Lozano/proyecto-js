@@ -76,6 +76,14 @@ body {
     }
 }
 
+.nav-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
 .count-products {
     background-color: #000;
     color: #fff;
@@ -140,12 +148,12 @@ body {
 }
 
 .container .card img {
-    width: 330px;
-    height: 290px;
+    width: 100%;
+    height: 60%;
 }
 
 .container .card h4 {
-    font-weight: 600;
+    font-weight: 500;
     margin: 8px auto;
 }
 
@@ -180,7 +188,12 @@ body {
     border: 2px solid #4caf50;
 }
 
-/* estilos de ventana Modal */
+.searchBar {
+    display: flex;
+    float: right;
+    padding: 20px;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -191,6 +204,7 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #888;
 }
 
 .modal-content {
@@ -199,6 +213,7 @@ body {
     margin: 50px auto;
     padding: 0;
     border: 1px solid #888;
+    border-radius: 3px;
     width: 600px;
     max-height: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
