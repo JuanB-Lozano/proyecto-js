@@ -33,6 +33,8 @@ function cargarEventos() {
         renderizarProductos();
     });
 
+    container-productosCarrito.addEventListener('click', agregarProducto);
+
     carrito.onclick = function () {
         modal.style.display = 'block';
     };
@@ -47,6 +49,8 @@ function cargarEventos() {
         }
     };
 };
+
+function agregarProductos() {}
 
 function ocultarModal() {
     modal.style.display = 'none';
