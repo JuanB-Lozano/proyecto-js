@@ -33,7 +33,7 @@ function cargarEventos() {
         renderizarProductos();
     });
 
-    container-productosCarrito.addEventListener('click', agregarProducto);
+    containerProducts.addEventListener('click', agregarProducto);
 
     carrito.onclick = function () {
         modal.style.display = 'block';
@@ -50,7 +50,18 @@ function cargarEventos() {
     };
 };
 
-function agregarProductos() {}
+function agregarProducto(e) {
+    e.preventDefault();
+    console.log('Producto Agregado');
+
+    if (e.target.classList.contains('agregar-carrito')) {
+        const productoAgregado = e.target.parentElement;
+        // console.log(productoAgregado);
+
+        alertProducto('success', 'producto agregado', '#34b555');
+        leerDatosProducto(productoAgregado);
+    };
+};
 
 function ocultarModal() {
     modal.style.display = 'none';
