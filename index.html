@@ -9,19 +9,24 @@
         <title>La Magiqueria</title>
     </head>
     <body>
-        <div class="navigation-bar" id="navigation-bar">
+        <div class="navigation-bar topnav" id="navigation-bar myTopnav">
             <a class="navbar-brand active" href="index.html">
                 <img src="img/logo1.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 La Magiqueria
             </a>
             <a href="#contact">Contacto</a>
             <a href="#about">Nosotros</a>
-            <a href="#about"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            <a href="#cart" id="carrito">
+                <div class="contenedor-carrito">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <div id="productos-carrito" class="count-products">0</div>
+                </div>
+            </a>
             <a href="javascript:void(0);" id="icon-menu" class="icon">
                 <i class="fa fa-bars"></i>
             </a>
         </div>
-        <h1 class="title">La Magiqueria</h1>
+        <h1 class="title title-container">La Magiqueria</h1>
         <div id="container-products" class="container">
             <!---->
             <div class="card">
@@ -49,6 +54,23 @@
                 <a id="4" class="boton agregar-carrito" href="#">Agregar</a>
             </div>
         </div>
+
+         <div id="ventana-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close btnClose">&times;</span>
+                    <h2>Carrito de compras</h2>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <h3 id="total"></h3>
+                    <a id="finalizar-compra" class="boton-carrito" href="#">finalizar</a>
+                    <a id="vaciar-carrito" class="boton-carrito" href="#">vaciar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="container-products" class="container"></div>
 
         <script src="./js/productos.js"></script>
         <script src="./js/index.js"></script>
