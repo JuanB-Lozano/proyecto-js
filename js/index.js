@@ -103,10 +103,10 @@ function addCarrito(addedProduct) {
 
     console.log(productosCarrito);
     mostrarProductosCarrito();
-}
+};
 
 function mostrarProductosCarrito() {
-    limpiarHTML();
+    limpiarCart();
 
     productosCarrito.forEach((producto) => {
         const { imagen, nombre, precio, cantidad, subtotal, id } = producto;
@@ -123,13 +123,30 @@ function mostrarProductosCarrito() {
                         `
         containerCarrito.append(div);
     });
+
+    mostrarCantidadItems();
+};
+
+function mostrarCantidadItems() {
+    let contarItems;
+
+    if (productosCarrito.length > 0) {
+        contenedorProductos.style.display = 'flex';
+        contenedorProductos.style.alignItems = 'center';
+        cantidadProductos.style.display = 'flex';
+        contarItems = productosCarrito.reduce((cantidad, producto) => cantidad + producto.cantidad, 0);
+        cantidadProductos.innerText = `${contarItems}`;
+    } else {
+        contenedorProductos.style.display = 'block';
+        cantidadProductos.style.display = 'none';
+    }
 }
 
-function limpiarHTML() {
+function limpiarCart() {
     while (containerCarrito.firstChild){
         containerCarrito.removeChild(containerCarrito.firstChild)
     };
-}
+};
 
 function ocultarModal() {
     modal.style.display = 'none';
