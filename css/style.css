@@ -16,6 +16,10 @@ body {
     background-color: #fefefe;
 }
 
+.total {
+    color: #000;
+}
+
 .topnav {
     overflow: hidden;
     background-color: #333;

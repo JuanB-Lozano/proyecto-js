@@ -125,7 +125,14 @@ function mostrarProductosCarrito() {
     });
 
     mostrarCantidadItems();
+    calcularTotal();
 };
+
+function calcularTotal() {
+    let total = productosCarrito.reduce((sumaTotal, producto) => sumaTotal + producto.subtotal, 0);
+
+    totalCarrito.innerHTML = `Total a Pagar: $ ${total} `;
+}
 
 function mostrarCantidadItems() {
     let contarItems;
