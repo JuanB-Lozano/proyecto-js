@@ -1,3 +1,4 @@
+const file = '../data/productos3.json';
 const containerProducts = document.getElementById('container-products');
 const modal = document.getElementById('ventana-modal');
 const carrito = document.getElementById('carrito');
@@ -7,7 +8,19 @@ const containerCarrito = document.querySelector('.modal-body');
 const iconMenu = document.getElementById('icon-menu');
 const contenedorProductos = document.querySelector('.contenedor-carrito');
 const cantidadProductos = document.querySelector('.count-products');
+const finalizarCompra = document.querySelector('#finalizar-compra');
+const vaciarCarrito = document.querySelector('#vaciar-carrito');
 let productosCarrito = [];
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    width: 300,
+    color: 'grey',
+    timer: 1000,
+    timerProgressBar: true,
+});
 
 class Producto {
     constructor(imagen, nombre, precio, id) {
@@ -52,6 +65,7 @@ function cargarEventos() {
         }
     };
 };
+
 
 function eliminarProducto(e) {
     if (e.target.classList.contains('eliminar-producto')) {
@@ -104,7 +118,7 @@ function addCarrito(addedProduct) {
 
     if (adentroCarrito) {
         const productos = productosCarrito.map((producto) => {
-            if (producto.id === addedProduct) {
+            if (producto.id === addedProduct.id) {
                 producto.cantidad++;
                 producto.subtotal = producto.precio * producto.cantidad;
 
@@ -206,3 +220,4 @@ const renderizarProductos = () => {
         containerProducts.append(divCard);
     });
 };
+
