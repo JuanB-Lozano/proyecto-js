@@ -31,6 +31,8 @@ function cargarEventos() {
 
     document.addEventListener('DOMContentLoaded', () => {
         renderizarProductos();
+        cargarCarritoLS();
+        mostrarProductosCarrito();
     });
 
     containerProducts.addEventListener('click', addProduct);
@@ -49,6 +51,10 @@ function cargarEventos() {
         }
     };
 };
+
+function cargarCarritoLS() {
+    productosCarrito = JSON.parse(localStorage.getItem('productosLS')) || [];
+}
 
 function addProduct(e) {
     e.preventDefault();
@@ -102,8 +108,13 @@ function addCarrito(addedProduct) {
     }
 
     console.log(productosCarrito);
+    carritoLocalStorage();
     mostrarProductosCarrito();
 };
+
+function carritoLocalStorage() {
+    localStorage.setItem('productosLS', JSON.stringify(productosCarrito));
+}
 
 function mostrarProductosCarrito() {
     limpiarCart();
