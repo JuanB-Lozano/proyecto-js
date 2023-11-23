@@ -9,6 +9,7 @@ const contenedorProductos = document.querySelector('.contenedor-carrito');
 const cantidadProductos = document.querySelector('.count-products');
 let productosCarrito = [];
 
+
 class Producto {
     constructor(imagen, nombre, precio, id) {
         this.imagen = imagen;
