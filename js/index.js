@@ -183,5 +183,3 @@ const renderizarProductos = () => {
         containerProducts.append(divCard);
     });
 };
-
-renderizarProductos();
