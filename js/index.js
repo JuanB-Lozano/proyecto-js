@@ -106,6 +106,8 @@ function addCarrito(addedProduct) {
 }
 
 function mostrarProductosCarrito() {
+    limpiarHTML();
+
     productosCarrito.forEach((producto) => {
         const { imagen, nombre, precio, cantidad, subtotal, id } = producto;
 
@@ -121,6 +123,12 @@ function mostrarProductosCarrito() {
                         `
         containerCarrito.append(div);
     });
+}
+
+function limpiarHTML() {
+    while (containerCarrito.firstChild){
+        containerCarrito.removeChild(containerCarrito.firstChild)
+    };
 }
 
 function ocultarModal() {
