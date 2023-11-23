@@ -129,7 +129,7 @@ function mostrarProductosCarrito() {
 };
 
 function calcularTotal() {
-    let total = productosCarrito.reduce((sumaTotal, producto) => sumaTotal + producto.subtotal, 0);
+    let total = productosCarrito.reduce((precioTotal, producto) => precioTotal + producto.subtotal, 0);
 
     totalCarrito.innerHTML = `Total a Pagar: $ ${total} `;
 }
