@@ -1,3 +1,4 @@
+
 const containerProducts = document.getElementById('container-products');
 const modal = document.getElementById('ventana-modal');
 const carrito = document.getElementById('carrito');
